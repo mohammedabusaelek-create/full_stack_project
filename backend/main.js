@@ -13,6 +13,12 @@ app.use(express.json())
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
-PORT=5001
+
+
+const PORT = process.env.PORT || 5001;
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 app.listen(PORT,()=>{console.log("server is run ");
 })
